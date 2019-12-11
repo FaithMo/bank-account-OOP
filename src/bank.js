@@ -1,18 +1,13 @@
-//  let Bankacc = require("./bankAccount");
+let Bankacc = require("./bankAccount");
 class Bank {
   constructor(balance, interestRate, monthlyFee, accountNum) {
-    // this.bankAccount = new Bankacc(balance, interestRate, monthlyFee);
-    this.bankAccount = new BankAccount(balance, interestRate, monthlyFee);
-    this.accountNum = accountNum; //10 Digits
+    
     this.accounts = [];
-    this.accounts.push({
-      accountNumber: this.accountNum,
-      bankAccount: this.bankAccount,
-    });
+    
   }
   createAccounts(balance, interestRate, monthlyFee, accountNumber) {
-    this.bankAccount = new BankAccount(balance, interestRate, monthlyFee);
-    this.accountNum = accountNumber; //10 Digits
+    this.bankAccount = new Bankacc(balance, interestRate, monthlyFee);
+    this.accountNum = accountNumber; 
     this.accounts.push({
       accountNumber: this.accountNum,
       bankAccount: this.bankAccount
@@ -42,13 +37,4 @@ class Bank {
   }
 }
 
-// let faith = new Bank();
-// faith.createAccounts(500, 12, 40, 3355);
-// faith.createAccounts(600, 15, 30, 2255);
-
-// faith.transfer(2255, 3355, 100);
-
-// console.log(faith.accounts[1].bankAccount.balance);
-
-
-// module.exports = Bank;
+module.exports = Bank;
